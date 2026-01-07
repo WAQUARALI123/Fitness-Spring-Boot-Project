@@ -9,4 +9,7 @@ import java.util.List;
 public interface ActivityRepository extends JpaRepository<Activity , String> {
 
     List<Activity> findByUserId(String userId);
+
+
+
 }

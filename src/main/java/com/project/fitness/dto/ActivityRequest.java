@@ -23,4 +23,6 @@ public class ActivityRequest {
     private Integer duration;
     private Integer caloriesBurned;
     private LocalDateTime startTime;
+
+
 }
