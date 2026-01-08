@@ -2,6 +2,7 @@ package com.project.fitness.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.JdbcTypeCode;
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Recommendation {
 
     @Id
@@ -33,17 +35,12 @@ public class Recommendation {
     @JoinColumn(name = "activity_id", nullable = false, foreignKey = @ForeignKey(name = "fk_activity"))
     private Activity activity;
 
-
-
-    @JdbcTypeCode(SqlTypes.JSON  )
     @Column(columnDefinition = "json")
     private List<String> improvements;
 
-    @JdbcTypeCode(SqlTypes.JSON  )
     @Column(columnDefinition = "json")
     private List<String> suggestions;
 
-    @JdbcTypeCode(SqlTypes.JSON  )
     @Column(columnDefinition = "json")
     private List<String> safety;
     private LocalDateTime createdAt;
