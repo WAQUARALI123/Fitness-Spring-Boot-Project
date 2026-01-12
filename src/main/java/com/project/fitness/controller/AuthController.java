@@ -8,6 +8,7 @@ import com.project.fitness.model.User;
 import com.project.fitness.repository.UserRepository;
 import com.project.fitness.security.JwtUtils;
 import com.project.fitness.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class AuthController {
     private final JwtUtils jwtUtils;
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@RequestBody RegisterRequest registerRequest){
+    public ResponseEntity<UserResponse> register(@Valid @RequestBody RegisterRequest registerRequest){
 //
 //        User savedUser = userService.register(registerRequest);
 //        return  ResponseEntity.ok(savedUser);
